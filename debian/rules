@@ -1,12 +1,12 @@
 #!/usr/bin/make -f
 
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 install-dir = "$(shell pwd)/debian/natnetlinux-dev"
 
 override_dh_auto_configure:
 	if ! test -d build; then mkdir build; fi
 	cd build; \
-	cmake ../ -DCMAKE_INSTALL_PREFIX="/usr"
+	cmake ../ -DBUILD_EXAMPLES=OFF -DCMAKE_INSTALL_PREFIX="/usr"
 
 override_dh_auto_build:
 	cd build; \
@@ -17,10 +17,13 @@ override_dh_auto_install:
 	cd build; \
 	make install DESTDIR=$(install-dir)
 
+override_dh_installchangelogs:
+	dh_installchangelogs
+	cat CHANGES.md | gzip -9 > "$(install-dir)/usr/share/doc/natnetlinux-dev/changelog.gz"
+
 override_dh_clean:
 	dh_clean
 	if test -d build; then rm -r build; fi
 
 %:
 	dh $@ 
-

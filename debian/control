@@ -1,18 +1,17 @@
 Source: natnetlinux
 Priority: extra
 Maintainer: Philip G. Lee <rocketman768@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), cmake, libboost-programoptions-dev (>= 1.49.0), libboost-system-dev (>= 1.49.0), libboost-thread-dev (>= 1.49.0)
+Build-Depends: debhelper (>= 8.0.0), cmake, libboost-dev (>= 1.49.0), libboost-program-options-dev (>= 1.49.0), libboost-system-dev (>= 1.49.0), libboost-thread-dev (>= 1.49.0)
 Standards-Version: 3.9.3
 Section: libs
 Homepage: https://github.com/rocketman768/NatNetLinux
-#Vcs-Git: git://git.debian.org/collab-maint/natnetlinux.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/natnetlinux.git;a=summary
+Vcs-Git: https://github.com/rocketman768/NatNetLinux-packaging.git
+Vcs-Browser: https://github.com/rocketman768/NatNetLinux-packaging
 
 Package: natnetlinux-dev
 Section: libdevel
 Architecture: any
-Depends: 
+Depends: libboost-dev (>= 1.49.0), libboost-system-dev (>= 1.49.0), libboost-thread-dev (>= 1.49.0), ${misc:Depends}
 Description: Library to read NatNet packets
  Header-only library that reads Optitrack NatNet packets into structured data
  objects under Linux.
-
