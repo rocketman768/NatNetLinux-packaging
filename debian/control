@@ -2,7 +2,7 @@ Source: natnetlinux
 Priority: extra
 Maintainer: Philip G. Lee <rocketman768@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), cmake, doxygen
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Section: libs
 Homepage: https://github.com/rocketman768/NatNetLinux
 Vcs-Git: https://github.com/rocketman768/NatNetLinux-packaging.git
