@@ -1,7 +1,7 @@
 Source: natnetlinux
 Priority: extra
 Maintainer: Philip G. Lee <rocketman768@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), cmake, libboost-dev (>= 1.49.0), libboost-program-options-dev (>= 1.49.0), libboost-system-dev (>= 1.49.0), libboost-thread-dev (>= 1.49.0)
+Build-Depends: debhelper (>= 8.0.0), cmake, doxygen
 Standards-Version: 3.9.3
 Section: libs
 Homepage: https://github.com/rocketman768/NatNetLinux
@@ -12,6 +12,16 @@ Package: natnetlinux-dev
 Section: libdevel
 Architecture: any
 Depends: libboost-dev (>= 1.49.0), libboost-system-dev (>= 1.49.0), libboost-thread-dev (>= 1.49.0), ${misc:Depends}
+Suggests: natnetlinux-doc
 Description: Library to read NatNet packets
  Header-only library that reads Optitrack NatNet packets into structured data
  objects under Linux.
+ 
+Package: natnetlinux-doc
+Section: doc
+Architecture: all
+Depends: libjs-jquery (>= 1.7.1), ${misc:Depends}
+Suggests: natnetlinux-dev
+Description: natnetlinux library documentation
+ Provides html Doxygen-generated documentation describing the usage of the
+ natnetlinux library.
